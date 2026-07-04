@@ -14,6 +14,10 @@ def perform_magic(input_file,output_file):
         input_file
     ], capture_output=True, text=True)
 
+    print("Return code:", result.returncode)
+    print("stdout:", repr(result.stdout))
+    print("stderr:", repr(result.stderr))
+
     duration = float(result.stdout.strip())
     step = 2
 
