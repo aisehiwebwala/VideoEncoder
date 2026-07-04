@@ -12,6 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: check ffmpeg
+        run: ffmpeg -version
+
       - name: Download Video
         run: curl "https://pixeldrain.dev/api/file/xqpvkdLu?download" -o video.mp4
 
