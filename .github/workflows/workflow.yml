@@ -12,8 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: check ffmpeg
-        run: ffmpeg -version
+      - name: Install FFMPEG
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
 
       - name: Download Video
         run: curl "https://pixeldrain.dev/api/file/xqpvkdLu?download" -o video.mp4
